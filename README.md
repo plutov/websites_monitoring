@@ -17,34 +17,32 @@ websites:
     pattern: ocaml
 ```
 
-### Prerequisites (macos example)
+### Setup OCaml if you haven't
 
-Takes a bit of time to install all the packages.
 
 ```bash
 brew install opam
 opam init
-eval $(opam env)
 opam install ocaml-lsp-server odoc ocamlformat utop
 opam switch create ocaml-base-compiler
 ```
 
-Project is created with this command:
+### Build the executable
 
 ```bash
-dune init proj websites_checker_ocaml
+opam install . --deps-only --with-doc --with-test
+dune build
 ```
 
-### Usage
-
+### Run the program
 ```bash
 CONFIG=./websites.yaml \
 DB_NAME=./websites.sqlite3 \
-dune exec websites_checker_ocaml
+./_build/install/default/bin/monitoring
 ```
 
 ### Run tests
 
 ```bash
-TODO
+dune runtest
 ```

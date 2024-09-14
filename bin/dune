@@ -1,4 +1,4 @@
 (executable
- (public_name websites_checker_ocaml)
+ (public_name monitoring)
  (name main)
- (libraries websites_checker_ocaml))
+ (libraries monitoring))

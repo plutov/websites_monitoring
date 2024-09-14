@@ -1,2 +1,3 @@
 (library
- (name websites_checker_ocaml))
+ (name monitoring)
+ (libraries yaml))

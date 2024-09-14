@@ -1,2 +1,2 @@
 (test
- (name test_websites_checker_ocaml))
+ (name test_websites_monitoring))

@@ -1,26 +1,19 @@
 (lang dune 3.16)
 
-(name websites_checker_ocaml)
+(name websites_monitoring)
 
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github plutov/websites_monitoring))
 
-(authors "Author Name")
+(authors "@pliutau")
 
-(maintainers "Maintainer Name")
+(license "MIT")
 
-(license LICENSE)
-
-(documentation https://url/to/documentation)
+(maintainers "@pliutau")
 
 (package
- (name websites_checker_ocaml)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune)
- (tags
-  (topics "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
+ (name websites_monitoring)
+ (synopsis "Check the list of websites for availability")
+ (depends ocaml dune yaml))
