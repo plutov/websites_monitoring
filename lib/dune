@@ -1,0 +1,2 @@
+(library
+ (name websites_checker_ocaml))

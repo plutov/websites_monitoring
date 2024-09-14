@@ -19,9 +19,20 @@ websites:
 
 ### Prerequisites (macos example)
 
+Takes a bit of time to install all the packages.
+
 ```bash
 brew install opam
 opam init
+eval $(opam env)
+opam install ocaml-lsp-server odoc ocamlformat utop
+opam switch create ocaml-base-compiler
+```
+
+Project is created with this command:
+
+```bash
+dune init proj websites_checker_ocaml
 ```
 
 ### Usage
@@ -29,7 +40,7 @@ opam init
 ```bash
 CONFIG=./websites.yaml \
 DB_NAME=./websites.sqlite3 \
-TODO
+dune exec websites_checker_ocaml
 ```
 
 ### Run tests
