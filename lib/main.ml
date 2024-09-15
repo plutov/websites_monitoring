@@ -3,7 +3,14 @@ let get_config_filename: string =
     let path = Sys.getenv "CONFIG" in
     path
   with Not_found ->
-    "websites.yaml"
+    "./websites.yaml"
+
+let get_db_filename: string =
+  try
+    let path = Sys.getenv "DB_NAME" in
+    path
+  with Not_found ->
+    "./websites.sqlite3"
 
 let main () =
   let websites = get_config_filename |> Config.get_websites_from_file in
