@@ -1,3 +1,5 @@
 (library
  (name monitoring)
- (libraries yaml yaml.unix))
+ (libraries yaml yaml.unix)
+ (preprocess
+  (pps ppx_deriving_yaml)))
