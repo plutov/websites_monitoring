@@ -8,6 +8,5 @@ let get_config_filename: string =
 let main () =
   let config_filename = get_config_filename in
   let websites = Config.get_websites_from_file(config_filename) in
-  let len = List.length websites in
-  let len_str = Printf.sprintf "%d" len in
-  print_endline len_str;;
+  let first_website = List.hd websites in
+  print_endline first_website.url
