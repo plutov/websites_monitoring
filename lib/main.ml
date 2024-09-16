@@ -13,9 +13,15 @@ let get_db_filename: string =
     "./websites.sqlite3"
 
 let main () =
+  (* let db_file = get_db_filename in
+  let db = Database.connect(db_file);*)
+
   let websites = get_config_filename |> Config.get_websites_from_file in
   Printf.printf "Websites found in config: %d\n" (List.length websites);
-  let first_website = List.hd websites in
-  let res = Crawler.crawl_website first_website in
-  (* print status code as string*)
-  res.status_code |> string_of_int |> print_endline;
+
+  (* iterate over websites and start a new thread for each website *)
+  List.iter (fun website ->
+    let _ = Thread.create Crawler.crawl_website website in ()
+  ) websites;
+
+  print_endline "Exiting..."

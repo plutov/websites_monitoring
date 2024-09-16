@@ -10,6 +10,9 @@ depends: [
   "ocaml"
   "dune" {>= "3.16"}
   "yaml"
+  "cohttp-lwt-unix"
+  "lwt"
+  "sqlite3"
   "odoc" {with-doc}
 ]
 build: [

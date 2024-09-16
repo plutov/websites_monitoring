@@ -7,6 +7,6 @@
     cohttp-lwt
     cohttp-async
     cohttp-lwt-unix
-    lwt_ssl)
+    sqlite3)
  (preprocess
   (pps ppx_deriving_yaml)))

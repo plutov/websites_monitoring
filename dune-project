@@ -16,4 +16,4 @@
 (package
  (name websites_monitoring)
  (synopsis "Check the list of websites for availability")
- (depends ocaml dune yaml cohttp-lwt-unix lwt))
+ (depends ocaml dune yaml cohttp-lwt-unix lwt sqlite3))

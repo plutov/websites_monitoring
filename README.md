@@ -29,23 +29,23 @@ opam switch create ocaml-base-compiler
 ### Build the executable
 
 ```bash
-opam install . --deps-only --with-doc --with-test
+opam install . --deps-only
 dune build
 ```
 
 ### Run the executable
+
 ```bash
 CONFIG=./websites.yaml \
 DB_NAME=./websites.sqlite3 \
 ./_build/install/default/bin/monitoring
 ```
 
-### Or use dune exec
+### Build & Run with Docker
 
 ```bash
-CONFIG=./websites.yaml \
-DB_NAME=./websites.sqlite3 \
-dune exec monitoring
+docker build -t monitoring .
+docker run monitoring
 ```
 
 ### Run tests
