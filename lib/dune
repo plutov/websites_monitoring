@@ -3,6 +3,7 @@
  (libraries
     yaml
     yaml.unix
+    domainslib
     lwt
     ssl
     cohttp

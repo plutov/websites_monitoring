@@ -1,3 +1,5 @@
+module T = Domainslib.Task
+
 let get_config_filename: string =
   try
     let path = Sys.getenv "CONFIG" in
@@ -5,23 +7,14 @@ let get_config_filename: string =
   with Not_found ->
     "./websites.yaml"
 
-let get_db_filename: string =
-  try
-    let path = Sys.getenv "DB_NAME" in
-    path
-  with Not_found ->
-    "./websites.sqlite3"
-
 let main () =
-  (* let db_file = get_db_filename in
-  let db = Database.connect(db_file);*)
-
   let websites = get_config_filename |> Config.get_websites_from_file in
   Printf.printf "Websites found in config: %d\n" (List.length websites);
 
-  (* iterate over websites and start a new thread for each website *)
-  List.iter (fun website ->
-    let _ = Thread.create Crawler.crawl_website website in ()
-  ) websites;
+  let num_domains = Domain.recommended_domain_count () - 1 in
+  Printf.printf "Number of domains/cores: %d\n" num_domains;
+
+  let pool = T.setup_pool ~num_domains:(num_domains - 1) () in
+  T.teardown_pool pool;
 
   print_endline "Exiting..."

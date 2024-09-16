@@ -10,6 +10,7 @@ depends: [
   "ocaml"
   "dune" {>= "3.16"}
   "yaml"
+  "domainslib"
   "lwt"
   "ssl"
   "cohttp"

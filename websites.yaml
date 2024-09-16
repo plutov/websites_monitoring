@@ -5,3 +5,11 @@ websites:
     interval: 15
   - url: https://news.ycombinator.com
     interval: 30
+  - url: https://httpbin.org
+    interval: 10
+  - url: https://google.com
+    interval: 10
+  - url: https://github.com
+    interval: 10
+  - url: https://stackoverflow.com
+    interval: 10

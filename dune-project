@@ -20,6 +20,7 @@
     ocaml
     dune
     yaml
+    domainslib
     lwt
     ssl
     cohttp
