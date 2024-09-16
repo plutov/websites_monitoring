@@ -16,4 +16,15 @@
 (package
  (name websites_monitoring)
  (synopsis "Check the list of websites for availability")
- (depends ocaml dune yaml cohttp-lwt-unix lwt sqlite3))
+ (depends
+    ocaml
+    dune
+    yaml
+    lwt
+    ssl
+    cohttp
+    cohttp-lwt
+    cohttp-async
+    cohttp-lwt-unix
+    sqlite3
+    ppx_deriving_yaml))

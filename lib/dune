@@ -3,10 +3,13 @@
  (libraries
     yaml
     yaml.unix
+    lwt
+    ssl
     cohttp
     cohttp-lwt
     cohttp-async
     cohttp-lwt-unix
-    sqlite3)
+    sqlite3
+    ppx_deriving_yaml)
  (preprocess
   (pps ppx_deriving_yaml)))
