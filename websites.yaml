@@ -5,4 +5,3 @@ websites:
     interval: 15
   - url: https://news.ycombinator.com
     interval: 30
-    pattern: ocaml

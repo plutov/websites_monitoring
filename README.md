@@ -14,7 +14,6 @@ websites:
     interval: 15
   - url: https://news.ycombinator.com
     interval: 30
-    pattern: ocaml
 ```
 
 ### Setup OCaml if you haven't
@@ -34,11 +33,19 @@ opam install . --deps-only --with-doc --with-test
 dune build
 ```
 
-### Run the program
+### Run the executable
 ```bash
 CONFIG=./websites.yaml \
 DB_NAME=./websites.sqlite3 \
 ./_build/install/default/bin/monitoring
+```
+
+### Or use dune exec
+
+```bash
+CONFIG=./websites.yaml \
+DB_NAME=./websites.sqlite3 \
+dune exec monitoring
 ```
 
 ### Run tests

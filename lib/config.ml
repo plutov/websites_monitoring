@@ -1,7 +1,6 @@
 type website = {
-  url : string;
+  url: string;
   interval: int;
-  pattern: string; [@default ""]
 } [@@deriving yaml]
 
 type websites = {

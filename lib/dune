@@ -1,5 +1,12 @@
 (library
  (name monitoring)
- (libraries yaml yaml.unix)
+ (libraries
+    yaml
+    yaml.unix
+    cohttp
+    cohttp-lwt
+    cohttp-async
+    cohttp-lwt-unix
+    lwt_ssl)
  (preprocess
   (pps ppx_deriving_yaml)))

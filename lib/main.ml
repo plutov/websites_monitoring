@@ -14,5 +14,8 @@ let get_db_filename: string =
 
 let main () =
   let websites = get_config_filename |> Config.get_websites_from_file in
+  Printf.printf "Websites found in config: %d\n" (List.length websites);
   let first_website = List.hd websites in
-  print_endline first_website.url
+  let res = Crawler.crawl_website first_website in
+  (* print status code as string*)
+  res.status_code |> string_of_int |> print_endline;
