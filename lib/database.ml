@@ -22,8 +22,8 @@ let insert_website(website: Crawler.crawl_result) =
   let insert_sql = Printf.sprintf "insert into websites (started_at, completed_at, status, url) values (%d, %d, %d, '%s')"
   website.started_at website.completed_at website.status_code website.url in
   match exec connection insert_sql with
-  | Rc.OK -> print_endline "Website inserted"
-  | _ -> raise (Failure "Failed to insert website")
+  | Rc.OK -> Printf.printf "Stored website crawl status: %s\n" website.url
+  | _ -> Printf.printf "Failed to store website crawl status: %s\n" website.url
 
 let () =
   match exec connection create_table_sql with

@@ -1,4 +1,8 @@
 websites:
+  - url: https://ocaml.org
+    interval: 20
+  - url: https://dune.readthedocs.io/en/stable/
+    interval: 10
   - url: https://packagemain.tech
     interval: 10
   - url: https://pliutau.com

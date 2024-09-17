@@ -21,11 +21,6 @@
     dune
     yaml
     domainslib
-    lwt
-    ssl
-    cohttp
-    cohttp-lwt
-    cohttp-async
-    cohttp-lwt-unix
+    ezcurl
     sqlite3
     ppx_deriving_yaml))

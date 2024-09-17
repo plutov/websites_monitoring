@@ -1,6 +1,6 @@
 FROM ocaml/opam:alpine AS init-opam
 
-RUN sudo apk add --update gmp-dev sqlite-dev linux-headers openssl-dev
+RUN sudo apk add --update gmp-dev sqlite-dev linux-headers openssl-dev curl
 
 FROM init-opam AS ocaml-app-base
 WORKDIR /home/opam/websites_monitoring
