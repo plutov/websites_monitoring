@@ -1,0 +1,5 @@
+websites:
+  - url: https://ocaml.org
+    interval: 20
+  - url: https://dune.readthedocs.io
+    interval: 10
