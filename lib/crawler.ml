@@ -6,13 +6,6 @@ type crawl_result = {
   status_code: int;
 }
 
-let crawl_url(url: string): int =
-  let res = Ezcurl.get ~url () in
-  match res with
-  | Ok response -> response.code
-  | Error _ -> 500
-
-
 let crawl_website(w: Config.website) : crawl_result =
   let start_time = Unix.gettimeofday() in
   let url = w.url in
