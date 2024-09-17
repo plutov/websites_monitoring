@@ -45,7 +45,10 @@ DB_NAME=./websites.sqlite3 \
 
 ```bash
 docker build -t monitoring .
-docker run -v $(pwd)/websites.yaml:/home/ocaml/websites.yaml \
+
+docker run \
+-v $(pwd)/websites.yaml:/home/ocaml/websites.yaml \
+-v $(pwd)/websites.sqlite3:/home/ocaml/websites.sqlite3 \
 -e CONFIG=/home/ocaml/websites.yaml \
 -e DB_NAME=/home/ocaml/websites.sqlite3 \
 monitoring
